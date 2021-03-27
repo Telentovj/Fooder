@@ -68,11 +68,11 @@ export default {
               this.recipes.push(doc.data());
             }
             //if search contain name return recipe
-            if(doc.data().name.indexOf(this.searchedValue) >= 0){
+            if(doc.data().name.toUpperCase().includes(this.searchedValue.toUpperCase())) {
               this.recipes.push(doc.data());
             }
             // if search contain cuisine return recipe
-            if(doc.data().cuisine.indexOf(this.searchedValue) >= 0){
+            if(doc.data().cuisine.toUpperCase().includes(this.searchedValue.toUpperCase())){
               this.recipes.push(doc.data());
             }
           });
